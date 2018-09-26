@@ -30,15 +30,21 @@ namespace SmartMenuLibrary
                 counter++;
             }
 
-            foreach (string temp in lines[2].Split(';'))
-            {
+           
+                string[] tempString = new string[2];
                 titel = lines[0];
                 explain = lines[1];
-                firstMenuPoint = "1. " + lines[2] + ": ";
-                secondMenuPoint = "2. " + lines[3] + ": ";
-                thirdMenuPoint = "3. " + lines[4] + ": ";
+                int count = 1; 
+                for (int i = 2; i <lines.Length; i++)
+                {
+                tempString = lines[i].Split(';');
+                firstMenuPoint = count + ". " + tempString[1] + ": ";
+                secondMenuPoint = count + ". " + lines[i] + ": ";
+                thirdMenuPoint = count + ". " + lines[i] + ": ";
+                }
+        
                 counter++;
-            }
+            
 
 
             file.Close();
@@ -48,6 +54,8 @@ namespace SmartMenuLibrary
         public void Activate()
         {
             Console.WriteLine(titel);
+
+            Console.WriteLine(firstMenuPoint);
 
         }
     }
