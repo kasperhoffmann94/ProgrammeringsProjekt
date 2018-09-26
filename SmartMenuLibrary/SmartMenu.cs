@@ -30,6 +30,8 @@ namespace SmartMenuLibrary
         }
         public void Activate()
         {
+
+            Console.WriteLine("titel");
             // Implement ...
         }
     }
