@@ -49,8 +49,14 @@ namespace SmartMenuLibrary
         {
             Console.WriteLine(titel);
             Console.WriteLine("");
+
             Console.WriteLine(explain);
 
+            Console.WriteLine(firstMenuPoint);
+
+            Console.WriteLine(secondMenuPoint);
+
+            Console.WriteLine(thirdMenuPoint);
         }
     }
 }
