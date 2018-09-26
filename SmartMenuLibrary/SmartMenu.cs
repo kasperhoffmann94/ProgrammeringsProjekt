@@ -48,6 +48,8 @@ namespace SmartMenuLibrary
         public void Activate()
         {
             Console.WriteLine(titel);
+            Console.WriteLine("");
+            Console.WriteLine(explain);
 
         }
     }
