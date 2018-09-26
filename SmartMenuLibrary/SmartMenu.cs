@@ -11,7 +11,7 @@ namespace SmartMenuLibrary
         public void LoadMenu(string path)
         {
             // Implement ...
-            string s;
+         
 
         }
         public void Activate()
