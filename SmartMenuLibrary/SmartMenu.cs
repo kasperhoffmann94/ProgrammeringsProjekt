@@ -51,12 +51,16 @@ namespace SmartMenuLibrary
             Console.WriteLine("");
 
             Console.WriteLine(explain);
+            Console.WriteLine("");
 
             Console.WriteLine(firstMenuPoint);
+            Console.WriteLine("");
 
             Console.WriteLine(secondMenuPoint);
+            Console.WriteLine("");
 
             Console.WriteLine(thirdMenuPoint);
+            Console.WriteLine("");
         }
     }
 }
