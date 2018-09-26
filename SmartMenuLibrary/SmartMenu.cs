@@ -13,9 +13,8 @@ namespace SmartMenuLibrary
         string[] lines = new string[5];
         string titel = "";
         string explain = "";
-        string firstMenuPoint = "";
-        string secondMenuPoint = "";
-        string thirdMenuPoint = "";
+        string menuPoint = "";
+        bool exit = false; 
         public void LoadMenu(string path)
         {
             int counter = 0;
@@ -30,15 +29,23 @@ namespace SmartMenuLibrary
                 counter++;
             }
 
-            foreach (string temp in lines[2].Split(';'))
+            string[] tempString = new string[5];
+            titel = lines[0];
+            explain = lines[1];
+            int count = 1;
+
+            for (int i = 2; i < lines.Length; i++)
             {
-                titel = lines[0];
-                explain = lines[1];
-                firstMenuPoint = "1. " + lines[2] + ": ";
-                secondMenuPoint = "2. " + lines[3] + ": ";
-                thirdMenuPoint = "3. " + lines[4] + ": ";
-                counter++;
+                tempString = lines[i].Split(';');
+                menuPoint =  "1. " + tempString[0] + ": ";
+                menuPoint += "\n" + "2. " + tempString[2] + ": "; 
+
+              
+                
             }
+                
+                counter++;
+            
 
 
             file.Close();
@@ -47,15 +54,40 @@ namespace SmartMenuLibrary
         }
         public void Activate()
         {
+          
             Console.WriteLine(titel + "\n");
 
             Console.WriteLine(explain + "\n");
 
-            Console.WriteLine(firstMenuPoint + "\n");
+            Console.WriteLine(menuPoint + "\n");
 
-            Console.WriteLine(secondMenuPoint + "\n");
+            int point = int.Parse(Console.ReadLine());
+            
+            switch (point)
+            {
+                case 0:
+                    exit = true;
+                    break;
 
-            Console.WriteLine(thirdMenuPoint + "\n");
+
+                case 1:
+
+                    break;
+
+
+                case 2:
+
+                    break;
+
+                case 3:
+
+                    break;
+
+                default:
+                    break;
+            }
+}
+
         }
     }
 }
