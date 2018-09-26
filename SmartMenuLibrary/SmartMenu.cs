@@ -47,20 +47,15 @@ namespace SmartMenuLibrary
         }
         public void Activate()
         {
-            Console.WriteLine(titel);
-            Console.WriteLine("");
+            Console.WriteLine(titel + "\n");
 
-            Console.WriteLine(explain);
-            Console.WriteLine("");
+            Console.WriteLine(explain + "\n");
 
-            Console.WriteLine(firstMenuPoint);
-            Console.WriteLine("");
+            Console.WriteLine(firstMenuPoint + "\n");
 
-            Console.WriteLine(secondMenuPoint);
-            Console.WriteLine("");
+            Console.WriteLine(secondMenuPoint + "\n");
 
-            Console.WriteLine(thirdMenuPoint);
-            Console.WriteLine("");
+            Console.WriteLine(thirdMenuPoint + "\n");
         }
     }
 }
