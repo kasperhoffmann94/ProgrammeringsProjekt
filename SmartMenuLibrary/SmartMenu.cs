@@ -83,7 +83,7 @@ namespace SmartMenuLibrary
                     //kald bindingsklassen
                     if (choice < menu.GetLength(0))
                     {
-                        Bindings.Call();
+                        Bindings.Call(input);
                     } else
                     {
                         Console.WriteLine("The number you put in is too high, choose one from the description");

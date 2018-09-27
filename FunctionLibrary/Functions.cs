@@ -23,7 +23,7 @@ namespace FunctionLibrary
 
             return "Result from doing: " + something;
         }
-        public static int GetTheAnswerToLifeTheUniverseAndEverything()
+        public static int GetTheAnswerToLifeTheUniverseAndEverything()  
         {
             return 42;
         }
