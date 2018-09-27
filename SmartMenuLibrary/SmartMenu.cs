@@ -13,7 +13,6 @@ namespace SmartMenuLibrary
         string titel = "";
         string explain = "";
         string[,] menu;
-        bool exit = false;
         public void LoadMenu(string path)
         {
             int counter = 0;
@@ -67,7 +66,7 @@ namespace SmartMenuLibrary
                 // print alle menuerne
                 for (int i = 0; i < menu.GetLength(0); i++)
                 {
-                    Console.WriteLine((i + 1) + ". " + menu[i, 0]);
+                    Console.WriteLine((i + 1) + ". " + menu[i, 0] + "\n");
                 }
 
                 string input = Console.ReadLine();
