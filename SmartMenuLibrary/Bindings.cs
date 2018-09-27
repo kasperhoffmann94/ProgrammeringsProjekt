@@ -27,11 +27,17 @@ namespace SmartMenuLibrary
             {
                 Console.WriteLine("please write something");
                 string temp = "";
-                temp = Console.ReadLine();
-
-                Console.WriteLine(Functions.DoSomething(temp));
-            }
-
+                while (true)
+                {
+                    temp = Console.ReadLine();
+                    if (temp.Length <= 0)
+                    {
+                        Console.WriteLine(Functions.DoSomething(temp));
+                    }
+                    else break;
+                }
+                
+            }            
         }
     }
 }
