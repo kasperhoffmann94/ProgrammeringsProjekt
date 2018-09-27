@@ -1,10 +1,11 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmartMenuApp
+namespace SmartMenuLibrary
 {
     class Bindings
     {
@@ -12,7 +13,7 @@ namespace SmartMenuApp
         public string Call(string id)
         {
 
-            return id;
+
         }
     }
 }
