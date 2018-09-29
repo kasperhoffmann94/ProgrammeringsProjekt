@@ -30,7 +30,7 @@ namespace SmartMenuLibrary
                     string temp = "";
                     while (true)
                     {
-                        Console.Write("Please enter something: ");
+                        Console.Write("Please enter anything: ");
                         temp = Console.ReadLine();
                         if (temp.Length <= 0)
                         {
