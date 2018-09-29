@@ -9,7 +9,7 @@ namespace SmartMenuLibrary
     {
 
         string line;
-        string[] lines = new string[5];
+        List<string> lines = new List<string>();
         string titel = "";
         string explain = "";
         string[,] menu;
@@ -23,19 +23,18 @@ namespace SmartMenuLibrary
                 new System.IO.StreamReader(@"..\..\..\MenuSpec.txt");
             while ((line = file.ReadLine()) != null)
             {
-                lines[counter] = line;
+                lines.Add(line);
                 counter++;
             }
 
-            string[] tempString = new string[5];
+
             titel = lines[0];
             explain = lines[1];
-            int count = 1;
 
 
             //indlæs menupunkter
-            menu = new string[lines.Length - 2, 2];
-            for (int i = 2; i < lines.Length; i++)
+            menu = new string[lines.Count - 2, 2];
+            for (int i = 2; i < lines.Count; i++)
             {
                 string[] split = lines[i].Split(';');
                 // menu title
@@ -72,18 +71,17 @@ namespace SmartMenuLibrary
                 string input = Console.ReadLine();
 
 
-                if (input == "0")
+                if (input.ToLower() == "0")
                 {
                     break;
                 }
                 else if (int.TryParse(input, out choice))
                 {
                     choice -= 1;
-
                     //kald bindingsklassen
                     if (choice < menu.GetLength(0))
                     {
-                        Bindings.Call(input);
+                        Bindings.Call(menu[choice, 1]);
                     } else
                     {
                         Console.WriteLine("The number you put in is too high, choose one from the description");
