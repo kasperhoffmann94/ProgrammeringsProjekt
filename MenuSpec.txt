@@ -1,6 +1,6 @@
 Beregningsalgoritmer
 Tast nummer for menupunkt eller 0 for at afslutte
 Beregn rektanglets areal;this
-Indlæs talserie;that
-Beregn Polyline længde;something
+IndlÃ¦s talserie;that
+Beregn polyline lÃ¦ngde;something
 Livets mening?;another
