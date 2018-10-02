@@ -28,7 +28,8 @@ namespace SmartMenuLibrary
 
                 case "something":
                     string temp = "";
-                    while (true)
+                    bool running = true;
+                    while (running != false)
                     {
                         Console.Write("Please enter anything: ");
                         temp = Console.ReadLine();
@@ -39,7 +40,7 @@ namespace SmartMenuLibrary
                         }
                         else
                         {
-                            break;
+                            running = false;
                         }
                     }
                     Console.WriteLine(Functions.DoSomething(temp));

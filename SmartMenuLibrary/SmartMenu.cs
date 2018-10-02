@@ -37,9 +37,8 @@ namespace SmartMenuLibrary
             for (int i = 2; i < lines.Count; i++)
             {
                 string[] split = lines[i].Split(';');
-                // menu title
+           
                 menu[i - 2, 0] = split[0];
-                // menu ID
                 menu[i - 2, 1] = split[1];
 
             }
@@ -53,7 +52,8 @@ namespace SmartMenuLibrary
         {
 
             int choice = 0;
-            while (true)
+            bool running = true; 
+            while (running != false)
             {
 
                 Console.Clear();
@@ -73,12 +73,12 @@ namespace SmartMenuLibrary
 
                 if (input.ToLower() == "0")
                 {
-                    break;
+                    running = false;
                 }
                 else if (int.TryParse(input, out choice))
                 {
                     choice -= 1;
-                    //kald bindingsklassen
+                    //kald bindings klassen
                     if (choice < menu.GetLength(0))
                     {
                         Bindings.Call(menu[choice, 1]);
