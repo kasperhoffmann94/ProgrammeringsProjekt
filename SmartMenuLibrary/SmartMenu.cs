@@ -15,36 +15,6 @@ namespace SmartMenuLibrary
         string[,] menu;
         public void LoadMenu(string path)
         {
-            int counter = 0;
-
-
-            // Read the file and display it line by line.  
-            System.IO.StreamReader file =
-                new System.IO.StreamReader(@"..\..\..\MenuSpec.txt");
-            while ((line = file.ReadLine()) != null)
-            {
-                lines.Add(line);
-                counter++;
-            }
-
-
-            titel = lines[0];
-            explain = lines[1];
-
-
-            //indlæs menupunkter
-            menu = new string[lines.Count - 2, 2];
-            for (int i = 2; i < lines.Count; i++)
-            {
-                string[] split = lines[i].Split(';');
-           
-                menu[i - 2, 0] = split[0];
-                menu[i - 2, 1] = split[1];
-
-            }
-
-
-            file.Close();
 
 
         }
@@ -56,7 +26,85 @@ namespace SmartMenuLibrary
             while (running != false)
             {
 
+                
                 Console.Clear();
+                Console.WriteLine("Select language / Vælg sporg");
+
+                Console.WriteLine("1. Dansk");
+                Console.WriteLine("2. English");
+
+                int danskengelsk = int.Parse(Console.ReadLine());
+                switch (danskengelsk)
+                {
+                    case 1: //Dansk
+                        int counter = 0;
+
+                        // Read the file and display it line by line.  
+                        System.IO.StreamReader file =
+                            new System.IO.StreamReader(@"..\..\..\MenuSpec.txt");
+                        while ((line = file.ReadLine()) != null)
+                        {
+                            lines.Add(line);
+                            counter++;
+                        }
+
+
+                        titel = lines[0];
+                        explain = lines[1];
+
+
+                        //indlæs menupunkter
+                        menu = new string[lines.Count - 2, 2];
+                        for (int i = 2; i < lines.Count; i++)
+                        {
+                            string[] split = lines[i].Split(';');
+
+                            menu[i - 2, 0] = split[0];
+                            menu[i - 2, 1] = split[1];
+
+                        }
+
+
+                        file.Close();
+                        break;
+                    case 2: //English 
+                        int counter1 = 0;
+
+                        // Read the file and display it line by line.  
+                        System.IO.StreamReader file1 =
+                            new System.IO.StreamReader(@"..\..\..\MenuSpecEnglish.txt");
+                        while ((line = file1.ReadLine()) != null)
+                        {
+                            lines.Add(line);
+                            counter1++;
+                        }
+
+
+                        titel = lines[0];
+                        explain = lines[1];
+
+
+                        //indlæs menupunkter
+                        menu = new string[lines.Count - 2, 2];
+                        for (int i = 2; i < lines.Count; i++)
+                        {
+                            string[] split = lines[i].Split(';');
+
+                            menu[i - 2, 0] = split[0];
+                            menu[i - 2, 1] = split[1];
+
+                        }
+
+
+                        file1.Close();
+                        break;
+                    case 3: //Forkert input
+                        if (danskengelsk > 2)
+                        {
+                            Console.WriteLine("The input is too high, enter lower number");
+                        }
+                        goto case 1;
+                }
 
                 Console.WriteLine(titel + "\n");
 
