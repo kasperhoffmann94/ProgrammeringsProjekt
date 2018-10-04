@@ -33,8 +33,8 @@ namespace SmartMenuLibrary
                 Console.WriteLine("1. Dansk");
                 Console.WriteLine("2. English");
 
-                int danskengelsk = int.Parse(Console.ReadLine());
-                switch (danskengelsk)
+                int Sporg = int.Parse(Console.ReadLine());
+                switch (Sporg)
                 {
                     case 1: //Dansk
                         int counter = 0;
@@ -99,7 +99,7 @@ namespace SmartMenuLibrary
                         file1.Close();
                         break;
                     case 3: //Forkert input
-                        if (danskengelsk > 2)
+                        if (Sporg > 2)
                         {
                             Console.WriteLine("The input is too high, enter lower number");
                         }
