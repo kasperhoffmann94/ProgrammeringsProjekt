@@ -22,7 +22,8 @@ namespace SmartMenuLibrary
         {
 
             int choice = 0;
-            bool running = true; 
+            bool running = true;
+            int sprog;
             while (running != false)
             {
 
@@ -32,9 +33,12 @@ namespace SmartMenuLibrary
 
                 Console.WriteLine("1. Dansk");
                 Console.WriteLine("2. English");
-
-                int Sporg = int.Parse(Console.ReadLine());
-                switch (Sporg)
+                while (!int.TryParse(Console.ReadLine(), out sprog) || sprog > 2)
+                {
+                    Console.WriteLine("Forkert input");
+                }
+                //int Sprog = int.Parse(Console.ReadLine());
+                switch (sprog)
                 {
                     case 1: //Dansk
                         int counter = 0;
@@ -98,13 +102,9 @@ namespace SmartMenuLibrary
 
                         file1.Close();
                         break;
-                    case 3: //Forkert input
-                        if (Sporg > 2)
-                        {
-                            Console.WriteLine("The input is too high, enter lower number");
-                        }
-                        goto case 1;
+                    
                 }
+                
 
                 Console.WriteLine(titel + "\n");
 
